@@ -9,7 +9,8 @@ const discordData = require('./discord.json');
 module.exports = new Promise((resolve, reject) => {
     client
         .on('ready', () => {
-           resolve(client);
+            process.on('exit', () => client.destroy());
+            resolve(client);
         });
 
     client.login(process.env.CGI_DISCORD_TOKEN);
