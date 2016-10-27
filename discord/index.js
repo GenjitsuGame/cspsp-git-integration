@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const discordData = require('./discord.json');
 
-Promise.promisfyAll(client);
+Promise.promisifyAll(client);
 
 var attempts = 0;
 var loggedIn = false;
