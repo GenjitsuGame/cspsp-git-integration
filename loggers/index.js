@@ -14,7 +14,9 @@ const operationLogger = {
                 level: 'info',
                 json: true,
                 filename: logsDir + 'operation.logs',
-                prettyPrint: true
+                prettyPrint: true,
+                maxsize: 5242880, //5MB
+                maxFiles: 5,
             }),
             new (winston.transports.Console)({
                 level: 'debug',
@@ -30,7 +32,9 @@ const operationLogger = {
                 level: 'info',
                 json: true,
                 filename: logsDir + 'operation.logs',
-                prettyPrint: true
+                prettyPrint: true,
+                maxsize: 5242880, //5MB
+                maxFiles: 5,
             })
         ]
     })
@@ -43,7 +47,9 @@ const accessLogger = {
                 level: 'info',
                 json: true,
                 filename: logsDir + 'access.logs',
-                prettyPrint: true
+                prettyPrint: true,
+                maxsize: 5242880, //5MB
+                maxFiles: 5,
             }),
             new (winston.transports.Console)({
                 level: 'debug',
@@ -59,20 +65,22 @@ const accessLogger = {
                 level: 'info',
                 json: true,
                 filename: logsDir + 'access.logs',
-                prettyPrint: true
+                prettyPrint: true,
+                maxsize: 5242880, //5MB
+                maxFiles: 5,
             })
         ]
     })
 }[env];
 
 operationLogger.stream = {
-    write: function(message, encoding){
+    write: function (message, encoding) {
         operationLogger.info(message);
     }
 };
 
 accessLogger.stream = {
-    write: function(message, encoding){
+    write: function (message, encoding) {
         accessLogger.info(message);
     }
 };
