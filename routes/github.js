@@ -6,7 +6,6 @@ const discord = require('../discord');
 const discordData = require('../discord/discord.json');
 
 handler.on('push', (repo, data) => {
-    console.log(data);
     discord
         .then(client => {
             return client
@@ -20,7 +19,6 @@ handler.on('push', (repo, data) => {
 });
 
 handler.on('issues', (repo, data) => {
-    console.log(data);
     discord
         .then(client => {
             return client
