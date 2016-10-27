@@ -1,7 +1,8 @@
 'use strict';
 const Promise = require('bluebird');
 const Discord = require('discord.js');
-const client = Discord.client();
+const client = Discord.Client();
+const discordData = require('./discord.json');
 
 Promise.promisfyAll(client);
 
@@ -14,9 +15,13 @@ var loggedIn = false;
         .then(() => {
             attempts = 0
             loggedIn = true;
+            return client
+                .sendMessageAsync(discordData.channel, 'Successfully started `cspspc-github-integration` service.', null)
+                .finally(() => client);
         })
         .catch(err => {
             attempts++;
+            if (attempts > 10) return process.exit(1);
             return login();    
         });
 })();
