@@ -10,7 +10,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser());
 
-const prefix = '/cspsp';
+const prefix = '/cspspc';
 
 app.use(prefix + '/github', require('./routes/github'));
 
