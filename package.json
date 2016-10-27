@@ -1,0 +1,27 @@
+{
+  "name": "cspsp-github-integration",
+  "version": "1.0.0",
+  "description": "[CSPSPC project](https://github.com/SuperCoac/cspspc) github integrations on discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenjitsuGame/cspsp-github-integration.git"
+  },
+  "author": "Pascal Luttgens <pascal.luttgens@hotmail.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GenjitsuGame/cspsp-github-integration/issues"
+  },
+  "homepage": "https://github.com/GenjitsuGame/cspsp-github-integration#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "discord.js": "^10.0.0",
+    "express": "^4.14.0",
+    "express-github-webhook": "^1.0.5",
+    "morgan": "^1.7.0"
+  }
+}
