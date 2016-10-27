@@ -22,7 +22,9 @@ const operationLogger = {
                 level: 'debug',
                 handleExceptions: true,
                 json: false,
-                colorize: true
+                colorize: true,
+                timestamp: true,
+                humanReadableUnhandledException: true
             })
         ]
     }),
@@ -55,7 +57,9 @@ const accessLogger = {
                 level: 'debug',
                 handleExceptions: true,
                 json: false,
-                colorize: true
+                colorize: true,
+                timestamp: true,
+                humanReadableUnhandledException: true
             })
         ]
     }),
