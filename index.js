@@ -15,5 +15,5 @@ const prefix = '/cspspc';
 
 app.use(prefix + '/github', require('./routes/github'));
 
-const port = process.env.CGI_PORT || 3100;
+const port = process.env.CGI_PORT || 3101;
 http.createServer(app).listen(port);

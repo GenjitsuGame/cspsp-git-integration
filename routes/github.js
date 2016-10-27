@@ -6,22 +6,28 @@ const discord = require('../discord');
 const discordData = require('../discord/discord.json');
 
 handler.on('push', (repo, data) => {
+    console.log(data);
     discord
         .then(client => {
             return client
                 .resolver
-                .resolveChannel(discordData.channel)
+                .resolveGuild(discordData.server)
+                .channels
+                .find(channel => channel.id == discordData.channel)
                 .sendMessage('`' + data.sender.login + '` has pushed to `' + repo + '` :\n' +
                 data.commits.map(commit => '    `' + commit.id.substring(0, 6) + '` ' + commit.message + '\n'));
         });
 });
 
 handler.on('issues', (repo, data) => {
+    console.log(data);
     discord
         .then(client => {
             return client
                 .resolver
-                .resolveChannel(discordData.channel)
+                .resolveGuild(discordData.server)
+                .channels
+                .find(channel => channel.id == discordData.channel)
                 .sendMessage('`' + data.sender.login + '` has ' + data.action + ' the issue `' + data.issue.number + '#' + data.issue.title + '`\n');
         });
 });
