@@ -8,7 +8,8 @@ const http = require('http');
 const app = express();
 
 app.use(logger('dev'));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const prefix = '/cspspc';
 
