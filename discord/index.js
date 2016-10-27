@@ -1,7 +1,7 @@
 'use strict';
 const Promise = require('bluebird');
 const Discord = require('discord.js');
-const client = Discord.Client();
+const client = new Discord.Client();
 const discordData = require('./discord.json');
 
 Promise.promisfyAll(client);
